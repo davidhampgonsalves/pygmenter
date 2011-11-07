@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+    font-color: #30381C;
+    background-image: url('../images/background.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+	width: 800px;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 100px;
+	margin: 30px 0 10px 0;
+	text-align: center;
+	font-family: 'Cabin Sketch', cursive;
+}
+
+h1 a {
+	color: white;
+	text-decoration:none;
+}
+
+h2 {
+	font-family: 'Cabin Sketch', cursive;
+	margin-top: 30px;
+}
+
+#social_buttons {
+	text-align:right;
+	margin-top: 10px;
+	margin-right: -35px;
+}
+
+.styles {float:right;margin-top:-25px}
+
+#button {margin-top: -20px}
+
+.button {
+	margin: 20px auto 0 auto;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+	font: 25px sans-serif;
+	padding: 25px;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.button:hover {
+	text-decoration: none;
+}
+
+.button:active {
+	position: relative;
+	top: 1px;
+}
+
+
+/* button styles, taken from ... somewhere */
+.red {
+	color: #faddde;
+	border: solid 1px #980c10;
+	background: #d81b21;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#aa1317));
+	background: -moz-linear-gradient(top,  #ed1c24,  #aa1317);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+}
+.red:hover {
+	background: #b61318;
+	background: -webkit-gradient(linear, left top, left bottom, from(#c9151b), to(#a11115));
+	background: -moz-linear-gradient(top,  #c9151b,  #a11115);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9151b', endColorstr='#a11115');
+}
+.red:active {
+	color: #de898c;
+	background: -webkit-gradient(linear, left top, left bottom, from(#aa1317), to(#ed1c24));
+	background: -moz-linear-gradient(top,  #aa1317,  #ed1c24);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');
+}
+
+input, textarea {
+    display:block;
+    width:100%;
+	margin: 0 auto;
+}
+
+#language {
+	font-family: Courier;
+    height: 80px;
+	width: 650px;
+    font-size: 25px;
+	padding-left: 40px;
+}
+
+#code {
+    margin-top : 20px;    
+    height: 250px;
+}
+
+#output_syntax {
+	
+}
+
+.yui3-aclist-list {
+	width: 630px;
+	font-size: 17px;
+	border: 10 solid rgb(200,200,200);
+	border-top: 0;
+	margin-top: -40px;
+	background: white;
+	z-index: 2;
+	font-family: Courier;
+}
+
+.yui3-aclist-list-item:onhover {
+	background: grey;
+}
+
+#output_area {display:none}
+
+.output {
+	border: dashed 5px rgb(200,200,200);
+	padding: 10px;
+	overflow:auto;
+}
+
+#credits {
+	margin-top: 40px;
+	margin-bottom: 20px;	
+	font-size: 10px;
+}
+
+.content, label {
+	margin-left: 10px;
+	font-family: Courier, sans;
+}
+
+.error {
+	border: 5px solid #D0351E;
+	background-image: url('../images/error.png');
+	background-repeat: no-repeat;
+	background-position: 99% 96%;
+}
+
+.centered {text-align: center}

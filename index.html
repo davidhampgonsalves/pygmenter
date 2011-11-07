@@ -1,0 +1,235 @@
+<html>
+<head>
+	<title>Pygmenter - Pygments from the Web</title>
+    <link rel="stylesheet" href='/styles/pygmenter.css'>
+   	<link id='pygment_style' href='/styles/pygments/friendly.css' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:700' rel='stylesheet' type='text/css'>
+	<script src="http://yui.yahooapis.com/3.4.1/build/yui/yui-min.js"></script>
+	<link rel="SHORTCUT ICON" href="/images/favicon.ico"/>
+	
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-19849283-4']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+</head>
+<body>
+	<h1><a href='/'>Pygmenter</a></h1>
+    <input id=language type=text value='Your Language?'></input>
+    <textarea id=code>
+
+
+
+	
+                             
+                             
+      	  
+                                           
+                                           Your Code?
+    </textarea>
+    <div id=social_buttons>
+
+	<g:plusone></g:plusone> 
+	</div>
+	<div class=centered>
+		<button id=button class='button red'>Highlight!</button>
+	</div>
+	
+	<a name='syntax_output'></a>
+	<div id=output_area>
+		<h2>Html Markup</h2>
+		<div id=html class=output>
+			this would be some highlighted syntax
+		</div>
+		
+		<h2>Highlighted Code</h2> 
+		<div class=styles>
+			<label for=style>style:</label>
+			<select id=style onchange='updateStyle(this)'>
+				<option value=monokai>monokai</option>      
+				<option value=manni>manni</option>      
+				<option value=perldoc>perldoc</option>				  
+				<option value=borland>borland</option>				  
+				<option value=colorful>colorful</option>				  
+				<option value=default>default</option>				  
+				<option value=murphy>murphy</option>				  
+				<option value=vs>vs</option>				  
+				<option value=trac>trac</option>				  
+				<option value=tango>tango</option>				  
+				<option value=fruity>fruity</option>				  
+				<option value=autumn>autumn</option>				  
+				<option value=bw>bw</option>			  
+				<option value=emacs>emacs</option>
+				<option value=pastie>pastie</option>
+				<option value=friendly selected="selected">friendly</option>
+				<option value=native>native</option>
+			</select>
+		</div>
+		
+		<div id=highlighted class='output syntax'>
+			this would be highlighted code : )
+		</div>
+	</div>
+	
+	<div class=about>
+		<h2>What is this?</h2>
+		<div class=content>
+			Pygmenter is a simple, web based frontend for the <a href='http://pygments.org/'>Pygments</a> syntax highlighter.  Its intended to help you to use Pygments quickly when you don't have the permissions/time to install Pygments locally.  
+		</div>
+	</div>
+	<div id=credits class='centered content'>
+		a weekend project by <a href='http://davidhampgonsalves.com'>david hamp-gonsalves</a>.
+	</div>
+	<script type='text/javascript'>
+		var LANGUAGES = ['ABAP','ANTLR','ANTLR With ActionScript Target','ANTLR With C# Target','ANTLR With CPP Target','ANTLR With Java Target','ANTLR With ObjectiveC Target','ANTLR With Perl Target','ANTLR With Python Target','ANTLR With Ruby Target','ActionScript','ActionScript 3','ApacheConf','AppleScript','Asymptote','BBCode','Bash','Bash Session','Batchfile','Befunge','Boo','Brainfuck','C','C#','C++','CMake','CSS','CSS+Django/Jinja','CSS+Genshi Text','CSS+Mako','CSS+Myghty','CSS+PHP','CSS+Ruby','CSS+Smarty','Cheetah','Clojure','Common Lisp','Cython','D','Darcs Patch','Debian Control file','Debian Sourcelist','Delphi','Diff','Django/Jinja','Dylan','ERB','Embedded Ragel','Erlang','Erlang erl session','Evoque','Fortran','GAS','GLSL','Genshi','Genshi Text','Gettext Catalog','Gherkin','Gnuplot','Go','Groff','HTML','HTML+Cheetah','HTML+Django/Jinja','HTML+Evoque','HTML+Genshi','HTML+Mako','HTML+Myghty','HTML+PHP','HTML+Smarty','Haskell','INI','IRC logs','Io','Java','Java Server Page','JavaScript','JavaScript+Cheetah','JavaScript+Django/Jinja','JavaScript+Genshi Text','JavaScript+Mako','JavaScript+Myghty','JavaScript+PHP','JavaScript+Ruby','JavaScript+Smarty','LLVM','Lighttpd configuration file','Literate Haskell','Logtalk','Lua','MOOCode','MXML','Makefile','Makefile','Mako','Matlab','Matlab session','MiniD','Modelica','MoinMoin/Trac Wiki markup','MuPAD','MySQL','Myghty','NASM','Newspeak','Nginx configuration file','NumPy','OCaml','Objective-C','Ooc','PHP','POVRay','Perl','Prolog','Python','Python 3','Python 3.0 Traceback','Python Traceback','Python console session','REBOL','RHTML','Ragel','Ragel in C Host','Ragel in CPP Host','Ragel in D Host','Ragel in Java Host','Ragel in Objective C Host','Ragel in Ruby Host','Raw token data','Redcode','Ruby','Ruby irb session','S','SQL','Scala','Scheme','Smalltalk','Smarty','SquidConf','Tcl','Tcsh','TeX','Text only','VB.net','Vala','VimL','XML','XML+Cheetah','XML+Django/Jinja','XML+Evoque','XML+Mako','XML+Myghty','XML+PHP','XML+Ruby','XML+Smarty','XSLT','YAML','aspx-cs','aspx-vb','c-objdump','cpp-objdump','d-objdump','objdump','reStructuredText','sqlite3con'];
+		var LANGUAGE_IDS = ['abap','antlr','antlr-as','antlr-csharp','antlr-cpp','antlr-java','antlr-objc','antlr-perl','antlr-python','antlr-ruby','as','as3','apacheconf','applescript','asy','bbcode','bash','console','bat','befunge','boo','brainfuck','c','csharp','cpp','cmake','css','css+django','css+genshitext','css+mako','css+myghty','css+php','css+erb','css+smarty','cheetah','clojure','common-lisp','cython','d','dpatch','control','sourceslist','delphi','diff','django','dylan','erb','ragel-em','erlang','erl','evoque','fortran','gas','glsl','genshi','genshitext','pot','Cucumber','gnuplot','go','groff','html','html+cheetah','html+django','html+evoque','html+genshi','html+mako','html+myghty','html+php','html+smarty','haskell','ini','irc','io','java','jsp','js','js+cheetah','js+django','js+genshitext','js+mako','js+myghty','js+php','js+erb','js+smarty','llvm','lighty','lhs','logtalk','lua','moocode','mxml','basemake','make','mako','matlab','matlabsession','minid','modelica','trac-wiki','mupad','mysql','myghty','nasm','newspeak','nginx','numpy','ocaml','objective-c','ooc','php','pov','perl','prolog','python','python3','py3tb','pytb','pycon','rebol','rhtml','ragel','ragel-c','ragel-cpp','ragel-d','ragel-java','ragel-objc','ragel-ruby','raw','redcode','rb','rbcon','splus','sql','scala','scheme','smalltalk','smarty','squidconf','tcl','tcsh','tex','text','vb.net','vala','vim','xml','xml+cheetah','xml+django','xml+evoque','xml+mako','xml+myghty','xml+php','xml+erb','xml+smarty','xslt','yaml','aspx-cs','aspx-vb','c-objdump','cpp-objdump','d-objdump','objdump','rst','sqlite3'];
+		var LANGUAGE_ID = 'language';
+		var CODE_ID = 'code';
+		var inputIds = [LANGUAGE_ID, CODE_ID];
+
+		YUI().use('event-base', function(Y) {init();})
+		function init() {
+			setupInputs();
+			
+			document.getElementById('button').addEventListener('click', function() {
+				if(validateInputs())
+					highlightCode();
+			});
+		}
+		
+		
+		function setupInputs() {
+			for(var id in inputIds) {
+				var input = document.getElementById(inputIds[id]);
+				input.title = input.value
+				
+				input.addEventListener('focus', function(e) {
+					if(e.target.value === e.target.title)
+						e.target.value = '';
+				});
+				
+				input.addEventListener('blur', function(e) {
+					if(e.target.value === '')
+						e.target.value = e.target.title;
+				});
+			}
+			
+			//yui for autocomplete drop down
+			YUI().use('autocomplete', 'autocomplete-filters', 'autocomplete-highlighters', function (Y) {
+				var language = Y.one('#language');
+				language.plug(Y.Plugin.AutoComplete, {
+					resultFilters    : 'phraseMatch',
+					resultHighlighter: 'phraseMatch',
+					source           : LANGUAGES,
+					activateFirstItem: true,
+					minQueryLength: 0,
+
+				});
+			
+				language.on('focus', function () {
+					language.ac.sendRequest('');
+				});
+			
+				language.ac.on('results', function (e) {
+					if (e.results.length) {
+						lastValue = language.ac.get('value');
+					} else {
+						language.set('value', lastValue);
+					}
+				});
+		
+				language.ac.after('select', function (e) {
+					lastValue = e.result.text;
+				});
+			});
+		}
+		
+		function validateInputs() {			
+			var valid = true;
+			for(var id in inputIds) {
+				var input = document.getElementById(inputIds[id]);
+				
+				if(input.value === input.title) {
+					input.className = 'error';
+					valid = false;
+				} else if(inputIds[id] === LANGUAGE_ID && getLanguageId(input.value) === null) {
+					input.className = 'error';
+					valid = false;
+				}else 
+					input.className = '';
+			}
+						
+			return valid;
+		}
+		
+		function highlightCode() {
+			window.location.hash="";
+			//create url using lang/code 
+			var xmlHttpRequest = createXMLHttpRequest();
+			var lang = document.getElementById(LANGUAGE_ID).value;
+			var code = document.getElementById(CODE_ID).value;
+			
+			lang = getLanguageId(lang);
+				
+			xmlHttpRequest.open('POST', '/pygmentize', true);
+			var params = 'code=' + encodeURIComponent(code) + '&lang=' + encodeURIComponent(lang);
+			
+			xmlHttpRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			xmlHttpRequest.onreadystatechange = function() {
+				if (xmlHttpRequest.readyState == 4) {
+					if (xmlHttpRequest.status != 200 || "" === xmlHttpRequest.responseText)
+						alert('Oh no, looks like we are having a problem!');
+					var response = JSON.parse(xmlHttpRequest.responseText);
+					document.getElementById('html').innerHTML = escapeHtml(response.html);
+					document.getElementById('highlighted').innerHTML = response.html;
+					document.getElementById('output_area').style.display = 'block';
+					window.location.hash="syntax_output";
+				}
+			};
+			xmlHttpRequest.send(params);
+		}
+		
+		function updateStyle(selector) {
+			console.log('changing style');
+			var styleUrl = '/styles/pygments/' + selector.options[selector.selectedIndex].value + '.css';
+			document.getElementById('pygment_style').href = styleUrl;
+		}
+		
+		 function createXMLHttpRequest() {
+			try { return new XMLHttpRequest(); } catch(e) {}
+			try { return new ActiveXObject("Msxml2.XMLHTTP"); } catch (e) {}
+			try { return new ActiveXObject("Microsoft.XMLHTTP");} catch (error) {}
+			alert("XMLHttpRequest not supported");
+			return null;
+		}
+		
+		function getLanguageId(language) {
+			for(var i in LANGUAGES)
+				if(LANGUAGES[i].toLowerCase() === language.toLowerCase())
+					return LANGUAGE_IDS[i];
+			return null;
+		}
+		
+		//google +1
+		(function() {
+			var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+			po.src = 'https://apis.google.com/js/plusone.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+		
+		function escapeHtml(string) {
+			return string.replace(/&/g,'&amp;').                                         
+                replace(/>/g,'&gt;').                                           
+                replace(/</g,'&lt;').                                           
+                replace(/"/g,'&quot;');
+		}
+	</script>
+</body>
+</html>
